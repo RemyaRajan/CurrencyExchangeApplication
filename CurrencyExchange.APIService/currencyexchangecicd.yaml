@@ -52,3 +52,9 @@ stages:
       inputs:
         targetPath: '$(Build.ArtifactStagingDirectory)' 
         artifactName: 'CurrencyExchange'
+
+    - task: AzureWebApp@1
+      inputs:
+        azureSubscription: 'svc-application-deployment'
+        appName: 'RivertyCurrencyExchangeApi'
+        package: '$(System.ArtifactStagingDirectory)/**/*.zip'
