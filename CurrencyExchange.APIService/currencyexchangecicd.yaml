@@ -14,29 +14,33 @@ stages:
   - job: BuildDotnetApplication    
     steps:
     - task: DotNetCoreCLI@2
+      displayName: "Restore Project"
       inputs:
         command: 'restore'
         projects: '**/*.csproj'
 
     - task: DotNetCoreCLI@2
+      displayName: "Test & Code coverage"
       inputs:
         command: test
         projects: '**/*Test.csproj'
         arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
 
-    - task: PublishTestResults@2
-      inputs:
-        testRunner: VSTest
-        testResultsFiles: '**/*.trx'
+    # - task: PublishTestResults@2
+    #   displayName: "Publish Test"
+    #   inputs:
+    #     testRunner: VSTest
+    #     testResultsFiles: '**/*.trx'
   
     - task: DotNetCoreCLI@2
-      displayName: Build
+      displayName: "Build"
       inputs:
         command: build
         projects: '**/*.csproj'
         arguments: '--configuration $(buildConfiguration)'
       
     - task: DotNetCoreCLI@2
+      displayName: "Publish"
       inputs:
         command: publish
         publishWebProjects: True
@@ -44,6 +48,7 @@ stages:
         zipAfterPublish: True
     
     - task: PublishPipelineArtifact@1
+      displayName: "Publish Artifact"
       inputs:
         targetPath: '$(Build.ArtifactStagingDirectory)' 
         artifactName: 'CurrencyExchange'
