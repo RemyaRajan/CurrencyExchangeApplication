@@ -13,7 +13,6 @@ stages:
   jobs:
   - job: BuildDotnetApplication    
     steps:
-    steps:
     - task: DotNetCoreCLI@2
       inputs:
         command: 'restore'
