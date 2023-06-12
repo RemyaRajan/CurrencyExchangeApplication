@@ -1,0 +1,10 @@
+global using Xunit;
+global using AutoMapper;
+global using CurrencyExchange.APIService.DataAccess.Entity;
+global using CurrencyExchange.APIService.Models.Domain;
+global using CurrencyExchangeAPI.DataAccess;
+global using Microsoft.EntityFrameworkCore;
+global using Moq;
+global using System.Collections.Generic;
+global using System.Data.Entity.Infrastructure;
+global using static CurrencyExchange.Xunit.Test.TestingHelper;

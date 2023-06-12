@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Z0yjNf2Gmcc5ZrImjR7kvTSb7ZDYLBPLzJ0pj+DznQY=",
+  "Source": "CurrencyExchange.APIService",
+  "BasePath": "_content/CurrencyExchange.APIService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

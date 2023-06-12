@@ -1,0 +1,11 @@
+.header {
+   height: 100px;
+   background-color: var(--bs-info-bg-subtle);
+   text-align: center;
+}
+
+.lbl {
+
+    font-size: 48px;
+    font-weight: 600;
+}

@@ -1,0 +1,9 @@
+﻿global using CurrencyExchange.APIService.DataAccess;
+global using CurrencyExchange.APIService.DataAccess.Entity;
+global using CurrencyExchangeAPI.Contract;
+global using Microsoft.EntityFrameworkCore;
+global using Newtonsoft.Json;
+global using AutoMapper;
+global using CurrencyExchange.APIService.Models.DTO;
+global using CurrencyExchange.APIService.Models.DTOs;
+global using CurrencyExchange.APIService.Models.Domain;
