@@ -8,8 +8,10 @@ variables:
   buildConfiguration: 'Release'
 
 stages:
+
 - stage: Build
   displayName: "Build Application"
+
   jobs:
   - job: BuildDotnetApplication    
     steps:
@@ -26,12 +28,6 @@ stages:
         projects: '**/*Test.csproj'
         arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
 
-    # - task: PublishTestResults@2
-    #   displayName: "Publish Test"
-    #   inputs:
-    #     testRunner: VSTest
-    #     testResultsFiles: '**/*.trx'
-  
     - task: DotNetCoreCLI@2
       displayName: "Build"
       inputs:
@@ -44,16 +40,26 @@ stages:
       inputs:
         command: publish
         publishWebProjects: True
-        arguments: '--configuration $(BuildConfiguration) --output $(Build.DefaultWorkingDirectory)'
+        arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
         zipAfterPublish: True
     
-    # - task: PublishPipelineArtifact@1
-    #   displayName: "Publish Artifact"
-    #   inputs:
-    #     targetPath: '$(Build.ArtifactStagingDirectory)' 
-    #     artifactName: 'CurrencyExchange'
+    - task: PublishPipelineArtifact@1
+      displayName: "Publish Artifact"
+      inputs:
+        targetPath: '$(Build.ArtifactStagingDirectory)' 
+        artifactName: 'CurrencyExchange'
 
+  - stage: PUblish
+    displayName: "Publish Application"
+    
+    - task: DownloadPipelineArtifact@2
+      displayName: "Download Artifact"
+      inputs:
+        artifactName: 'CurrencyExchange'
+        targetPath: $(System.DefaultWorkingDirectory)
+    
     - task: AzureWebApp@1
+      displayName: "PUblish to WebApp"
       inputs:
         azureSubscription: 'svc-application-deployment'
         appName: 'RivertyCurrencyExchangeApi'
