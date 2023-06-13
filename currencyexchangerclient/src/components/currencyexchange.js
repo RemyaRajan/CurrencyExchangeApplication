@@ -32,20 +32,34 @@ function Exchange() {
 
     const getCurrencies = () => {
 
-        var getUrl = process.env.CURRENCY_API_ENDPOINT || "https://localhost:7035";
+        var getUrl = process.env.CURRENCY_API_ENDPOINT || "https://rivertycurrencyexchangeapi.azurewebsites.net";
 
         if (date !== undefined && date !== null) {
          const cDate = format(date, 'dd-MM-yyyy')
-
-            fetch(getUrl + "/api/CurrencyRate/" + from + "/" + to + "/" + amount+"/"+cDate)
+            var token = localStorage.getItem("token");
+            fetch(getUrl + "/api/CurrencyRate/" + from + "/" + to + "/" + amount+"/"+cDate,
+                {
+                    method: "GET",
+                    headers: {
+                        Authorization: 'Bearer ' +token
+                    }
+                }
+            )
             .then((response) => response.json())
             .then((data) => loadCurrency(data));
         }
         else {
-
-            fetch(getUrl + "/api/CurrencyRate/" + from + "/" + to + "/" + amount)
-                .then((response) => response.json())
-                .then((data) => loadCurrency(data));
+            var token = localStorage.getItem("token");
+            fetch(getUrl + "/api/CurrencyRate/" + from + "/" + to + "/" + amount, 
+                {
+                    method: "GET",
+                    headers: {
+                        Authorization: 'Bearer ' +token
+                    }
+                }
+            )
+            .then((response) => response.json())
+            .then((data) => loadCurrency(data));
         }
     }
 
@@ -56,8 +70,15 @@ function Exchange() {
     const fetchData = () => {
         const results = []
         // Fetch data
-        var getUrl = process.env.CURRENCY_API_ENDPOINT || "https://localhost:7035";
-        fetch(getUrl + "/api/CurrencyRate/GetCurrencies")
+        var getUrl = process.env.CURRENCY_API_ENDPOINT || "https://rivertycurrencyexchangeapi.azurewebsites.net";
+        var token = localStorage.getItem("token");
+        fetch(getUrl + "/api/CurrencyRate/GetCurrencies", 
+            {
+                method: "GET",
+                headers: {
+                    Authorization: 'Bearer ' +token
+                }
+            })
             .then((response) => response.json())
             .then((data) => data.forEach((value) => {
                 results.push({
@@ -113,7 +134,7 @@ function Exchange() {
                     <label for="txtAmount">Amount</label>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">From Date</label>
+                    <label class="form-label">Date</label>
                     <DatePicker selected={date} onChange={(date) => setDate(date)} dateFromat='YYYY-MM-dd' />
 
                 </div>

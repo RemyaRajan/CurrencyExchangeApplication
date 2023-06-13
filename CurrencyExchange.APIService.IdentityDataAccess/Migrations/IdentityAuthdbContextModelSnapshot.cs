@@ -51,17 +51,17 @@ namespace CurrencyExchange.APIService.IdentityDataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "9b56e8f6-b1fa-40ea-b89b-04569dd70c96",
-                            ConcurrencyStamp = "9b56e8f6-b1fa-40ea-b89b-04569dd70c96",
+                            Id = "9c75fe92-8769-4284-8e39-0d604411cc6a",
+                            ConcurrencyStamp = "9c75fe92-8769-4284-8e39-0d604411cc6a",
                             Name = "Reader",
                             NormalizedName = "READER"
                         },
                         new
                         {
-                            Id = "2b0a9e6c-255c-49e0-80fb-bfef57a99e9d",
-                            ConcurrencyStamp = "9b56e8f6-b1fa-40ea-b89b-04569dd70c96",
+                            Id = "d9584bf3-3e4a-45db-a574-47282f7948a4",
+                            ConcurrencyStamp = "9c75fe92-8769-4284-8e39-0d604411cc6a",
                             Name = "Writter",
-                            NormalizedName = "WRITTER"
+                            NormalizedName = "WRITER"
                         });
                 });
 

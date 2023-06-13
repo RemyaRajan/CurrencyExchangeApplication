@@ -1,0 +1,14 @@
+2023-06-14 00:10:55.792 +05:30 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-06-14 00:10:56.063 +05:30 [INF] Now listening on: https://localhost:7035
+2023-06-14 00:10:56.066 +05:30 [INF] Now listening on: http://localhost:5134
+2023-06-14 00:10:56.069 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-14 00:10:56.071 +05:30 [INF] Hosting environment: Development
+2023-06-14 00:10:56.072 +05:30 [INF] Content root path: E:\Riverty\CurrencyExchange\CurrencyExchange.APIService
+2023-06-14 00:10:56.771 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7035/swagger/index.html - -
+2023-06-14 00:10:57.341 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7035/_framework/aspnetcore-browser-refresh.js - -
+2023-06-14 00:10:57.341 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7035/_vs/browserLink - -
+2023-06-14 00:10:57.343 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7035/swagger/index.html - - - 200 - text/html;charset=utf-8 572.4206ms
+2023-06-14 00:10:57.366 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7035/_framework/aspnetcore-browser-refresh.js - - - 200 12024 application/javascript;+charset=utf-8 25.6153ms
+2023-06-14 00:10:57.417 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7035/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 76.8823ms
+2023-06-14 00:10:57.493 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7035/swagger/v1/swagger.json - -
+2023-06-14 00:10:57.643 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7035/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 149.8805ms

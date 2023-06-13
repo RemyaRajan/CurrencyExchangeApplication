@@ -2,7 +2,7 @@ namespace CurrencyExchange.APIService.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-//[Authorize(Roles = "Reader")]
+[Authorize(Roles = "Reader,Admin")]
 public class CurrencyRateController : ControllerBase
 {
     private readonly ILogger<CurrencyRateController> logger;

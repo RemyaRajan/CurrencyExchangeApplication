@@ -18,7 +18,6 @@ namespace CurrencyExchange.APIService.IdentityDataAccess
         public string CreateJWTToken(IdentityUser user, List<string> roles)
         {
             var claims = new List<Claim>();
-            //claims.Add(new Claim(ClaimTypes.NameIdentifier, user.UserName));
             claims.Add(new Claim(ClaimTypes.NameIdentifier, user.Email));
 
             foreach (var role in roles)

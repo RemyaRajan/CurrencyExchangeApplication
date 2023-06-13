@@ -1,0 +1,53 @@
+2023-06-13 22:38:28.986 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7035/api/Auth/Login - -
+2023-06-13 22:38:28.991 +05:30 [INF] CORS policy execution successful.
+2023-06-13 22:38:28.993 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7035/api/Auth/Login - - - 204 - - 7.1324ms
+2023-06-13 22:38:28.994 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7035/api/Auth/Login application/json 57
+2023-06-13 22:38:29.002 +05:30 [INF] CORS policy execution successful.
+2023-06-13 22:38:29.004 +05:30 [INF] Executing endpoint 'CurrencyExchange.APIService.Controllers.AuthController.Login (CurrencyExchange.APIService)'
+2023-06-13 22:38:29.006 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CurrencyExchange.APIService.Models.DTOs.LoginRequest) on controller CurrencyExchange.APIService.Controllers.AuthController (CurrencyExchange.APIService).
+2023-06-13 22:38:29.009 +05:30 [INF] AuthorizeUser started to executing
+2023-06-13 22:38:29.842 +05:30 [INF] Executed DbCommand (114ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2023-06-13 22:38:30.030 +05:30 [INF] Executed DbCommand (102ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-06-13 22:38:30.036 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-06-13 22:38:30.038 +05:30 [INF] Executed action CurrencyExchange.APIService.Controllers.AuthController.Login (CurrencyExchange.APIService) in 1028.7023ms
+2023-06-13 22:38:30.039 +05:30 [INF] Executed endpoint 'CurrencyExchange.APIService.Controllers.AuthController.Login (CurrencyExchange.APIService)'
+2023-06-13 22:38:30.041 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7035/api/Auth/Login application/json 57 - 200 - application/json;+charset=utf-8 1046.5812ms
+2023-06-13 22:38:30.066 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7035/api/CurrencyRate/GetCurrencies - -
+2023-06-13 22:38:30.066 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7035/api/CurrencyRate/GetCurrencies - -
+2023-06-13 22:38:30.068 +05:30 [INF] CORS policy execution successful.
+2023-06-13 22:38:30.070 +05:30 [INF] CORS policy execution successful.
+2023-06-13 22:38:30.078 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7035/api/CurrencyRate/GetCurrencies - -
+2023-06-13 22:38:30.072 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7035/api/CurrencyRate/GetCurrencies - - - 204 - - 6.4554ms
+2023-06-13 22:38:30.082 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7035/api/CurrencyRate/GetCurrencies - - - 204 - - 15.8930ms
+2023-06-13 22:38:30.092 +05:30 [INF] CORS policy execution successful.
+2023-06-13 22:38:30.097 +05:30 [INF] Executing endpoint 'CurrencyExchange.APIService.Controllers.CurrencyRateController.GetCurrencies (CurrencyExchange.APIService)'
+2023-06-13 22:38:30.099 +05:30 [INF] Route matched with {action = "GetCurrencies", controller = "CurrencyRate"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCurrencies() on controller CurrencyExchange.APIService.Controllers.CurrencyRateController (CurrencyExchange.APIService).
+2023-06-13 22:38:30.104 +05:30 [INF] GetCurrencies started to execute
+2023-06-13 22:38:30.891 +05:30 [INF] Executed DbCommand (105ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CurrencyId], [t].[CreatedBy], [t].[CreatedDateTime], [t].[CurrencyCode]
+FROM [tbl_CurrencyMaster] AS [t]
+2023-06-13 22:38:30.901 +05:30 [INF] GetCurrencies executed
+2023-06-13 22:38:30.903 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CurrencyExchange.APIService.Models.DTOs.GetCurrenciesResponse, CurrencyExchange.APIService.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-06-13 22:38:30.906 +05:30 [INF] Executed action CurrencyExchange.APIService.Controllers.CurrencyRateController.GetCurrencies (CurrencyExchange.APIService) in 802.6594ms
+2023-06-13 22:38:30.908 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7035/api/CurrencyRate/GetCurrencies - -
+2023-06-13 22:38:30.909 +05:30 [INF] Executed endpoint 'CurrencyExchange.APIService.Controllers.CurrencyRateController.GetCurrencies (CurrencyExchange.APIService)'
+2023-06-13 22:38:30.910 +05:30 [INF] CORS policy execution successful.
+2023-06-13 22:38:30.911 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7035/api/CurrencyRate/GetCurrencies - - - 200 - application/json;+charset=utf-8 836.6079ms
+2023-06-13 22:38:30.914 +05:30 [INF] Executing endpoint 'CurrencyExchange.APIService.Controllers.CurrencyRateController.GetCurrencies (CurrencyExchange.APIService)'
+2023-06-13 22:38:30.917 +05:30 [INF] Route matched with {action = "GetCurrencies", controller = "CurrencyRate"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCurrencies() on controller CurrencyExchange.APIService.Controllers.CurrencyRateController (CurrencyExchange.APIService).
+2023-06-13 22:38:30.919 +05:30 [INF] GetCurrencies started to execute
+2023-06-13 22:38:31.024 +05:30 [INF] Executed DbCommand (104ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CurrencyId], [t].[CreatedBy], [t].[CreatedDateTime], [t].[CurrencyCode]
+FROM [tbl_CurrencyMaster] AS [t]
+2023-06-13 22:38:31.047 +05:30 [INF] GetCurrencies executed
+2023-06-13 22:38:31.054 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CurrencyExchange.APIService.Models.DTOs.GetCurrenciesResponse, CurrencyExchange.APIService.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-06-13 22:38:31.065 +05:30 [INF] Executed action CurrencyExchange.APIService.Controllers.CurrencyRateController.GetCurrencies (CurrencyExchange.APIService) in 146.2744ms
+2023-06-13 22:38:31.068 +05:30 [INF] Executed endpoint 'CurrencyExchange.APIService.Controllers.CurrencyRateController.GetCurrencies (CurrencyExchange.APIService)'
+2023-06-13 22:38:31.070 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7035/api/CurrencyRate/GetCurrencies - - - 200 - application/json;+charset=utf-8 162.2092ms

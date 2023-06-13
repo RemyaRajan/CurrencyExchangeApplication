@@ -16,8 +16,15 @@ export default function App() {
   const fetchChartData = async () => {
     const fDate = format(fromDate, 'dd-MM-yyyy')
     const tDate = format(toDate, 'dd-MM-yyyy')
-    var getUrl = process.env.CURRENCY_API_ENDPOINT || "https://localhost:7035";
-    const res = await fetch(getUrl + "/api/CurrencyRate/" + from + "/" + to + "/" + fDate + "/" + tDate)
+    var token = localStorage.getItem("token");
+    var getUrl = process.env.CURRENCY_API_ENDPOINT || "https://rivertycurrencyexchangeapi.azurewebsites.net";
+    const res = await fetch(getUrl + "/api/CurrencyRate/" + from + "/" + to + "/" + fDate + "/" + tDate,
+      {
+        method: "GET",
+        headers: {
+          Authorization: 'Bearer ' + token
+        }
+      })
       .then((response) => response.json())
       .then((data) => callBack(data))
   };
@@ -37,8 +44,15 @@ export default function App() {
   const fetchData = () => {
     const results = []
     // Fetch data
-    var getUrl = process.env.CURRENCY_API_ENDPOINT || "https://localhost:7035";
-    fetch(getUrl + "/api/CurrencyRate/GetCurrencies")
+    var getUrl = process.env.CURRENCY_API_ENDPOINT || "https://rivertycurrencyexchangeapi.azurewebsites.net";
+    var token = localStorage.getItem("token");
+    fetch(getUrl + "/api/CurrencyRate/GetCurrencies",
+      {
+        method: "GET",
+        headers: {
+          Authorization: 'Bearer ' + token
+        }
+      })
       .then((response) => response.json())
       .then((data) => data.forEach((value) => {
         results.push({

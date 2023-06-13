@@ -16,16 +16,16 @@ namespace CurrencyExchange.APIService.Controllers
            this.logger = logger;
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("Login")]
-        public async Task<IActionResult> Login(string username, string password)
+        public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest)
         {
             logger.LogInformation("AuthorizeUser started to executing");
 
-            var user = await userManger.FindByEmailAsync(username);
+            var user = await userManger.FindByEmailAsync(loginRequest.UserName);
             if (user != null)
             {
-                var result = await userManger.CheckPasswordAsync(user, password);
+                var result = await userManger.CheckPasswordAsync(user, loginRequest.Password);
                 if (result)
                 {
                     //Get Roles for this user

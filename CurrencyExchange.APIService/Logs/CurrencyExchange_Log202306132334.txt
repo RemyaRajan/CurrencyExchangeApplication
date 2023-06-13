@@ -1,0 +1,2 @@
+2023-06-13 23:34:22.410 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7035/api/CurrencyRate/EUR/NOK/31-05-2023/06-06-2023 - -
+2023-06-13 23:34:22.423 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7035/api/CurrencyRate/EUR/NOK/31-05-2023/06-06-2023 - - - 404 0 - 12.4322ms

@@ -1,6 +1,4 @@
 ﻿
-using CurrencyExchange.APIService.DataAccess.Mapper;
-
 string connectionString = System.Environment.GetEnvironmentVariable($"ConnectionStrings:connString", EnvironmentVariableTarget.Process);
 var serviceProvider = new ServiceCollection()
      .AddLogging((loggingBuilder) => loggingBuilder
@@ -16,6 +14,7 @@ var repository = serviceProvider.GetService<ICurrencyExchangeRateRepository>();
 
 try
 {
+    
     string baseCurrency;
     string targetCurrency;
     decimal amount;

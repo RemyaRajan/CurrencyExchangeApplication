@@ -1,0 +1,56 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+- stage: Build
+  displayName: "Publish Application"
+  jobs:
+  - job: BuildApplication  
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '18.x'
+      displayName: 'Install Node.js'
+
+    - script: |
+        npm install
+      displayName: 'npm install'
+
+    - script: |
+        npm run build
+      displayName: 'npm build'
+
+    - task: CopyFiles@2
+      inputs:
+        sourceFolder: '$(Build.SourcesDirectory)'
+        contents: |
+          build/*
+        targetFolder: '$(Build.ArtifactStagingDirectory)'
+      displayName: 'Copy project files'
+
+    - task: PublishPipelineArtifact@1
+      inputs:
+        artifactName: e2e-server
+        targetPath: '$(Build.ArtifactStagingDirectory)'
+        publishLocation: 'pipeline'
+      displayName: 'Publish npm artifact'
+
+- stage: Publish
+  displayName: "Publish Application"
+  jobs:
+  - job: PublishApplication    
+    steps:
+    - task: DownloadPipelineArtifact@2
+      displayName: "Download Artifact"
+      inputs:
+        artifactName: 'e2e-server'
+        targetPath: $(System.DefaultWorkingDirectory)
+    
+    - task: AzureWebApp@1
+      displayName: "PUblish to WebApp"
+      inputs:
+        azureSubscription: 'svc-application-deployment'
+        appName: 'RivertyCurrencyExchangeClient'
+        package: '$(System.DefaultWorkingDirectory)/**/*.zip'

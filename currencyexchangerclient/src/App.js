@@ -5,6 +5,8 @@ import NavBar from './components/NavBar';
 import Header from './components/Header';
 import Exchange from './components/currencyexchange';
 import Chart from './components/currencyexchangechart';
+import Login from './components/login';
+import Register from './components/register';
 
 function App() {
   return (
@@ -12,9 +14,10 @@ function App() {
       <Header />
       <NavBar />
       <Routes>
-        <Route path="/" element={ <Exchange />} />
+        <Route path="/" element={ <Login />} />
         <Route path="/exchange" element={<Exchange />} />
         <Route path="/chart" element={<Chart />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </Router>
   )

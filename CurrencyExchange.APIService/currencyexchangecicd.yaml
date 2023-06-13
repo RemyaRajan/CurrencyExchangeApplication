@@ -49,7 +49,7 @@ stages:
         targetPath: '$(Build.ArtifactStagingDirectory)' 
         artifactName: 'CurrencyExchange'
 
-- stage: PUblish
+- stage: Publish
   displayName: "Publish Application"
   jobs:
   - job: PublishApplication    

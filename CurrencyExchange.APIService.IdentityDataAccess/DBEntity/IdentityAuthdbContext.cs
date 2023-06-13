@@ -31,7 +31,7 @@
                     Id = writterRoleID,
                     ConcurrencyStamp = readerRoleID,
                     Name = "Writter",
-                    NormalizedName = "Writter".ToUpper()
+                    NormalizedName = "Writer".ToUpper()
                 }
             };
 
