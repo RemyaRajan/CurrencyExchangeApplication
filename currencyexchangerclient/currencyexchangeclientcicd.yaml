@@ -5,7 +5,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 - stage: Build
-  displayName: "Publish Application"
+  displayName: "Build Application"
   jobs:
   - job: BuildApplication  
     steps:
