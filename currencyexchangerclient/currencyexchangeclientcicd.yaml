@@ -17,28 +17,18 @@ stages:
 
     - script: |
         ls
-      workingDirectory: $(System.DefaultWorkingDirectory)
-      displayName: 'npm install'
-
-    - script: |
-        ls
-      workingDirectory: $(Build.SourcesDirectory)
-      displayName: 'npm install'
-
-    - script: |
-        ls
         npm install
-      workingDirectory: $(System.DefaultWorkingDirectory)
+      workingDirectory: '$(System.DefaultWorkingDirectory)/currencyexchangerclient'
       displayName: 'npm install'
 
     - script: |
         npm run build
-      
+      workingDirectory: '$(System.DefaultWorkingDirectory)/currencyexchangerclient'
       displayName: 'npm build'
 
     - task: CopyFiles@2
       inputs:
-        sourceFolder: '$(Build.SourcesDirectory)'
+        sourceFolder: '$(Build.SourcesDirectory)/currencyexchangerclient'
         contents: |
           build/*
         targetFolder: '$(Build.ArtifactStagingDirectory)'
