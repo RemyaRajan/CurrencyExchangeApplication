@@ -34,6 +34,14 @@ stages:
         targetFolder: '$(Build.ArtifactStagingDirectory)'
       displayName: 'Copy project files'
 
+    - task: ArchiveFiles@2
+      displayName: "terraform file archive"
+      inputs:
+        rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/build'
+        includeRootFolder: false
+        archiveType: zip
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+
     - task: PublishPipelineArtifact@1
       inputs:
         artifactName: e2e-server
