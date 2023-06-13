@@ -8,7 +8,6 @@ variables:
   buildConfiguration: 'Release'
 
 stages:
-
 - stage: Build
   displayName: "Build Application"
 
