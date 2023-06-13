@@ -52,7 +52,7 @@ stages:
 - stage: PUblish
   displayName: "Publish Application"
   jobs:
-  - job: BuildDotnetApplication    
+  - job: PublishApplication    
     steps:
     - task: DownloadPipelineArtifact@2
       displayName: "Download Artifact"
