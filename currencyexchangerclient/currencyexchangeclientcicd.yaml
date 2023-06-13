@@ -16,11 +16,24 @@ stages:
       displayName: 'Install Node.js '
 
     - script: |
+        ls
+      workingDirectory: $(System.DefaultWorkingDirectory)
+      displayName: 'npm install'
+
+    - script: |
+        ls
+      workingDirectory: $(Build.SourcesDirectory)
+      displayName: 'npm install'
+
+    - script: |
+        ls
         npm install
+      workingDirectory: $(System.DefaultWorkingDirectory)
       displayName: 'npm install'
 
     - script: |
         npm run build
+      
       displayName: 'npm build'
 
     - task: CopyFiles@2
