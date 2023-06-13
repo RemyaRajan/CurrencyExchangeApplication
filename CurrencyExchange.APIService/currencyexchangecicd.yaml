@@ -49,9 +49,11 @@ stages:
         targetPath: '$(Build.ArtifactStagingDirectory)' 
         artifactName: 'CurrencyExchange'
 
-  - stage: PUblish
-    displayName: "Publish Application"
-    
+- stage: PUblish
+  displayName: "Publish Application"
+  jobs:
+  - job: BuildDotnetApplication    
+    steps:
     - task: DownloadPipelineArtifact@2
       displayName: "Download Artifact"
       inputs:
