@@ -27,7 +27,7 @@ stages:
       displayName: 'npm build'
 
     - task: ArchiveFiles@2
-      displayName: "terraform file archive"
+      displayName: "file archive"
       inputs:
         rootFolderOrFile: '$(Build.SourcesDirectory)/currencyexchangerclient/build'
         includeRootFolder: false
