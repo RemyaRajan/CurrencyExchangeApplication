@@ -32,7 +32,7 @@ function Exchange() {
 
     const getCurrencies = () => {
 
-        var getUrl = process.env.CURRENCY_API_ENDPOINT || "https://rivertycurrencyexchangeapi.azurewebsites.net";
+        var getUrl = process.env.CURRENCY_API_ENDPOINT || "https://localhost:7035";
 
         if (date !== undefined && date !== null) {
          const cDate = format(date, 'dd-MM-yyyy')
@@ -70,7 +70,7 @@ function Exchange() {
     const fetchData = () => {
         const results = []
         // Fetch data
-        var getUrl = process.env.CURRENCY_API_ENDPOINT || "https://rivertycurrencyexchangeapi.azurewebsites.net";
+        var getUrl = process.env.CURRENCY_API_ENDPOINT || "https://localhost:7035";
         var token = localStorage.getItem("token");
         fetch(getUrl + "/api/CurrencyRate/GetCurrencies", 
             {

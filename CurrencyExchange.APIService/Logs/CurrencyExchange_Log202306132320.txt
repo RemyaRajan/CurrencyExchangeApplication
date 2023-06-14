@@ -1,7 +1,0 @@
-2023-06-13 23:20:10.972 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7035/api/Auth/Register - -
-2023-06-13 23:20:10.978 +05:30 [INF] CORS policy execution successful.
-2023-06-13 23:20:10.980 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7035/api/Auth/Register - - - 204 - - 8.3500ms
-2023-06-13 23:20:10.982 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7035/api/Auth/Register application/json 71
-2023-06-13 23:20:10.984 +05:30 [INF] CORS policy execution successful.
-2023-06-13 23:20:10.985 +05:30 [INF] Executing endpoint 'CurrencyExchange.APIService.Controllers.AuthController.Register (CurrencyExchange.APIService)'
-2023-06-13 23:20:11.087 +05:30 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(CurrencyExchange.APIService.Models.DTOs.RegisterRequest) on controller CurrencyExchange.APIService.Controllers.AuthController (CurrencyExchange.APIService).

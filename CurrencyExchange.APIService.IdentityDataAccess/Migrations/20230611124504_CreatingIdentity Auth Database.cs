@@ -163,7 +163,7 @@ namespace CurrencyExchange.APIService.IdentityDataAccess.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "2b0a9e6c-255c-49e0-80fb-bfef57a99e9d", "9b56e8f6-b1fa-40ea-b89b-04569dd70c96", "Writter", "WRITTER" },
+                    { "2b0a9e6c-255c-49e0-80fb-bfef57a99e9d", "2b0a9e6c-255c-49e0-80fb-bfef57a99e9d", "Writer", "WRITER" },
                     { "9b56e8f6-b1fa-40ea-b89b-04569dd70c96", "9b56e8f6-b1fa-40ea-b89b-04569dd70c96", "Reader", "READER" }
                 });
 

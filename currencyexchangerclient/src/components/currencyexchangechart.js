@@ -17,7 +17,7 @@ export default function App() {
     const fDate = format(fromDate, 'dd-MM-yyyy')
     const tDate = format(toDate, 'dd-MM-yyyy')
     var token = localStorage.getItem("token");
-    var getUrl = process.env.CURRENCY_API_ENDPOINT || "https://rivertycurrencyexchangeapi.azurewebsites.net";
+    var getUrl = process.env.CURRENCY_API_ENDPOINT || "https://localhost:7035";
     const res = await fetch(getUrl + "/api/CurrencyRate/" + from + "/" + to + "/" + fDate + "/" + tDate,
       {
         method: "GET",
@@ -44,7 +44,7 @@ export default function App() {
   const fetchData = () => {
     const results = []
     // Fetch data
-    var getUrl = process.env.CURRENCY_API_ENDPOINT || "https://rivertycurrencyexchangeapi.azurewebsites.net";
+    var getUrl = process.env.CURRENCY_API_ENDPOINT || "https://localhost:7035";
     var token = localStorage.getItem("token");
     fetch(getUrl + "/api/CurrencyRate/GetCurrencies",
       {

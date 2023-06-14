@@ -26,18 +26,10 @@ stages:
       workingDirectory: '$(System.DefaultWorkingDirectory)/currencyexchangerclient'
       displayName: 'npm build'
 
-    - task: CopyFiles@2
-      inputs:
-        sourceFolder: '$(Build.SourcesDirectory)/currencyexchangerclient'
-        contents: |
-          build/*
-        targetFolder: '$(Build.ArtifactStagingDirectory)'
-      displayName: 'Copy project files'
-
     - task: ArchiveFiles@2
       displayName: "terraform file archive"
       inputs:
-        rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/build'
+        rootFolderOrFile: '$(Build.SourcesDirectory)/currencyexchangerclient'/build'
         includeRootFolder: false
         archiveType: zip
         archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'

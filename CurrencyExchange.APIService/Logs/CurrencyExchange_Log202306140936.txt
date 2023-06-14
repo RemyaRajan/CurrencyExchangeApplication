@@ -1,0 +1,15 @@
+2023-06-14 09:36:18.706 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7035/api/Auth/Register - -
+2023-06-14 09:36:18.722 +05:30 [INF] CORS policy execution successful.
+2023-06-14 09:36:18.724 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7035/api/Auth/Register - - - 204 - - 18.5175ms
+2023-06-14 09:36:18.727 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7035/api/Auth/Register application/json 72
+2023-06-14 09:36:18.728 +05:30 [INF] CORS policy execution successful.
+2023-06-14 09:36:18.729 +05:30 [INF] Executing endpoint 'CurrencyExchange.APIService.Controllers.AuthController.Register (CurrencyExchange.APIService)'
+2023-06-14 09:36:18.757 +05:30 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(CurrencyExchange.APIService.Models.DTOs.RegisterRequest) on controller CurrencyExchange.APIService.Controllers.AuthController (CurrencyExchange.APIService).
+2023-06-14 09:36:18.977 +05:30 [INF] Executed DbCommand (102ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-06-14 09:36:18.990 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2023-06-14 09:36:18.993 +05:30 [INF] Executed action CurrencyExchange.APIService.Controllers.AuthController.Register (CurrencyExchange.APIService) in 232.0221ms
+2023-06-14 09:36:18.996 +05:30 [INF] Executed endpoint 'CurrencyExchange.APIService.Controllers.AuthController.Register (CurrencyExchange.APIService)'
+2023-06-14 09:36:18.998 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7035/api/Auth/Register application/json 72 - 400 - application/json;+charset=utf-8 271.7820ms

@@ -1,0 +1,32 @@
+2023-06-14 09:24:07.537 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7035/api/CurrencyRate/eur/nok/10/06-02-2023 - -
+2023-06-14 09:24:07.559 +05:30 [INF] Executing endpoint 'CurrencyExchange.APIService.Controllers.CurrencyRateController.GetCurrencyRateByDate (CurrencyExchange.APIService)'
+2023-06-14 09:24:07.563 +05:30 [INF] Route matched with {action = "GetCurrencyRateByDate", controller = "CurrencyRate"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCurrencyRateByDate(System.String, System.String, System.Decimal, System.DateTime) on controller CurrencyExchange.APIService.Controllers.CurrencyRateController (CurrencyExchange.APIService).
+2023-06-14 09:24:07.610 +05:30 [INF] GetCurrencyRatesByDate started to execute
+2023-06-14 09:24:07.735 +05:30 [INF] Executed DbCommand (104ms) [Parameters=[@__baseCode_0='?' (Size = 3) (DbType = AnsiString), @__targetCode_1='?' (Size = 3) (DbType = AnsiString), @__date_2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[CurrencyRateId], [t].[BaseCurrencyId], [t].[CreatedBy], [t].[CreatedDateTime], [t].[Date], [t].[ExchageRate], [t].[IsLatest], [t].[TargetCurrencyId]
+FROM [tbl_CurrencyRate] AS [t]
+INNER JOIN [tbl_CurrencyMaster] AS [t0] ON [t].[BaseCurrencyId] = [t0].[CurrencyId]
+INNER JOIN [tbl_CurrencyMaster] AS [t1] ON [t].[TargetCurrencyId] = [t1].[CurrencyId]
+WHERE [t0].[CurrencyCode] = @__baseCode_0 AND [t1].[CurrencyCode] = @__targetCode_1 AND [t].[Date] = @__date_2
+ORDER BY [t].[Date]
+2023-06-14 09:24:07.740 +05:30 [INF] GetCurrencyRatesByDate executed
+2023-06-14 09:24:07.741 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Decimal'.
+2023-06-14 09:24:07.743 +05:30 [INF] Executed action CurrencyExchange.APIService.Controllers.CurrencyRateController.GetCurrencyRateByDate (CurrencyExchange.APIService) in 143.3916ms
+2023-06-14 09:24:07.745 +05:30 [INF] Executed endpoint 'CurrencyExchange.APIService.Controllers.CurrencyRateController.GetCurrencyRateByDate (CurrencyExchange.APIService)'
+2023-06-14 09:24:07.746 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7035/api/CurrencyRate/eur/nok/10/06-02-2023 - - - 200 - application/json;+charset=utf-8 209.4855ms
+2023-06-14 09:24:46.941 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7035/api/CurrencyRate/eur/nok/06-01-2023/06-06-2023 - -
+2023-06-14 09:24:46.949 +05:30 [INF] Executing endpoint 'CurrencyExchange.APIService.Controllers.CurrencyRateController.GetCurrencyRatesByPeriod (CurrencyExchange.APIService)'
+2023-06-14 09:24:46.954 +05:30 [INF] Route matched with {action = "GetCurrencyRatesByPeriod", controller = "CurrencyRate"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCurrencyRatesByPeriod(System.String, System.String, System.DateTime, System.DateTime) on controller CurrencyExchange.APIService.Controllers.CurrencyRateController (CurrencyExchange.APIService).
+2023-06-14 09:24:46.958 +05:30 [INF] GetCurrencyRatesByPeriod started to execute
+2023-06-14 09:24:47.075 +05:30 [INF] Executed DbCommand (102ms) [Parameters=[@__baseCode_0='?' (Size = 3) (DbType = AnsiString), @__targetCode_1='?' (Size = 3) (DbType = AnsiString), @__fromDate_2='?' (DbType = DateTime2), @__toDate_3='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CurrencyRateId], [t].[BaseCurrencyId], [t].[CreatedBy], [t].[CreatedDateTime], [t].[Date], [t].[ExchageRate], [t].[IsLatest], [t].[TargetCurrencyId]
+FROM [tbl_CurrencyRate] AS [t]
+INNER JOIN [tbl_CurrencyMaster] AS [t0] ON [t].[BaseCurrencyId] = [t0].[CurrencyId]
+INNER JOIN [tbl_CurrencyMaster] AS [t1] ON [t].[TargetCurrencyId] = [t1].[CurrencyId]
+WHERE [t0].[CurrencyCode] = @__baseCode_0 AND [t1].[CurrencyCode] = @__targetCode_1 AND [t].[Date] >= @__fromDate_2 AND [t].[Date] <= @__toDate_3
+ORDER BY [t].[Date]
+2023-06-14 09:24:47.082 +05:30 [INF] GetCurrencyRatesByPeriod executed
+2023-06-14 09:24:47.083 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CurrencyExchange.APIService.Models.DTO.GetCurrencyRateResponse, CurrencyExchange.APIService.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-06-14 09:24:47.093 +05:30 [INF] Executed action CurrencyExchange.APIService.Controllers.CurrencyRateController.GetCurrencyRatesByPeriod (CurrencyExchange.APIService) in 136.0517ms
+2023-06-14 09:24:47.098 +05:30 [INF] Executed endpoint 'CurrencyExchange.APIService.Controllers.CurrencyRateController.GetCurrencyRatesByPeriod (CurrencyExchange.APIService)'
+2023-06-14 09:24:47.100 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7035/api/CurrencyRate/eur/nok/06-01-2023/06-06-2023 - - - 200 - application/json;+charset=utf-8 158.8153ms

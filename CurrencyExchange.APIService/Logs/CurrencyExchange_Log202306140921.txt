@@ -1,0 +1,19 @@
+2023-06-14 09:21:21.735 +05:30 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-06-14 09:21:22.020 +05:30 [INF] Now listening on: https://localhost:7035
+2023-06-14 09:21:22.023 +05:30 [INF] Now listening on: http://localhost:5134
+2023-06-14 09:21:22.027 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-14 09:21:22.028 +05:30 [INF] Hosting environment: Development
+2023-06-14 09:21:22.029 +05:30 [INF] Content root path: E:\Riverty\CurrencyExchange\CurrencyExchange.APIService
+2023-06-14 09:21:24.245 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7035/swagger/index.html - -
+2023-06-14 09:21:24.539 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7035/swagger/index.html - - - 200 - text/html;charset=utf-8 295.2217ms
+2023-06-14 09:21:24.562 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7035/_framework/aspnetcore-browser-refresh.js - -
+2023-06-14 09:21:24.569 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7035/_framework/aspnetcore-browser-refresh.js - - - 200 12024 application/javascript;+charset=utf-8 6.5853ms
+2023-06-14 09:21:24.681 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7035/_vs/browserLink - -
+2023-06-14 09:21:24.733 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7035/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 51.6630ms
+2023-06-14 09:21:24.820 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7035/swagger/v1/swagger.json - -
+2023-06-14 09:21:24.978 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7035/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 158.2982ms
+2023-06-14 09:21:36.630 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7035/api/CurrencyRate/GetCurrencies - -
+2023-06-14 09:21:37.392 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Reader|Admin)
+2023-06-14 09:21:37.400 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2023-06-14 09:21:37.403 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7035/api/CurrencyRate/GetCurrencies - - - 401 0 - 772.8689ms

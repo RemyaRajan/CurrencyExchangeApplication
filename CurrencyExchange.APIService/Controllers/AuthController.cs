@@ -15,7 +15,12 @@ namespace CurrencyExchange.APIService.Controllers
             this.tokenRepository = tokenRepository;
            this.logger = logger;
         }
-
+        /// <summary>
+        /// API for user login and genereate JWT Token
+        ///GET :https://localhost:7035/api/Auth/Login
+        /// </summary>
+        /// <param name="loginRequest"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("Login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest)
@@ -39,7 +44,12 @@ namespace CurrencyExchange.APIService.Controllers
             return BadRequest("User Name or Password Incorrect");
         }
 
-
+        /// <summary>
+        /// API to register a new user
+        ///GET :https://localhost:7035/api/Auth/Register
+        /// </summary>
+        /// <param name="registerRequest"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("Register")]
         [ValidateModel]

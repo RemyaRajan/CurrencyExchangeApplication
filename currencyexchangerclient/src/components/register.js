@@ -22,7 +22,7 @@ function Register() {
     }
 
     const userRegistration = () => {
-        var getUrl = process.env.CURRENCY_API_ENDPOINT || "https://rivertycurrencyexchangeapi.azurewebsites.net";
+        var getUrl = process.env.CURRENCY_API_ENDPOINT || "https://localhost:7035";
         var registerData = {
             UserName: userName,
             Password: password,
@@ -64,6 +64,8 @@ function Register() {
                         <option key="Select">--Select--</option>
                         <option key="Reader">Reader</option>
                         <option key="Writer">Writer</option>
+                        <option key="Admin">Admin</option>
+
                     </select>
                 </div>
                 <button class="btn btn-primary" onClick={userRegistration} >
