@@ -22,7 +22,7 @@ function Login() {
     }
 
     const  userLogin = () => {
-        var getUrl = process.env.CURRENCY_API_ENDPOINT || "https://localhost:7035";
+        var getUrl = process.env.CURRENCY_API_ENDPOINT || "https://rivertycurrencyexchangeapi.azurewebsites.net";
         var loginData = {
             UserName: userName,
             Password: password

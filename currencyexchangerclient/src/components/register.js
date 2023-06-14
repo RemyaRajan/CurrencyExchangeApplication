@@ -22,7 +22,7 @@ function Register() {
     }
 
     const userRegistration = () => {
-        var getUrl = process.env.CURRENCY_API_ENDPOINT || "https://localhost:7035";
+        var getUrl = process.env.CURRENCY_API_ENDPOINT || "https://rivertycurrencyexchangeapi.azurewebsites.net";
         var registerData = {
             UserName: userName,
             Password: password,
