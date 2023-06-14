@@ -29,7 +29,7 @@ stages:
     - task: ArchiveFiles@2
       displayName: "terraform file archive"
       inputs:
-        rootFolderOrFile: '$(Build.SourcesDirectory)/currencyexchangerclient'/build'
+        rootFolderOrFile: '$(Build.SourcesDirectory)/currencyexchangerclient/build'
         includeRootFolder: false
         archiveType: zip
         archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
